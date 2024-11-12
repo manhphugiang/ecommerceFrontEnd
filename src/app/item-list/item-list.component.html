@@ -1,0 +1,22 @@
+<h4>Basic mat-select</h4>
+<mat-form-field>
+  <mat-label>Favorite category</mat-label>
+  <mat-select (selectionChange)="getProducts($event.value)" >
+    <mat-option [value]="all">Get All Category</mat-option>
+    <mat-option *ngFor="let brand of category" [value]="brand.name">
+      {{ brand.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+
+<h4>Product List</h4>
+<mat-list>
+  <mat-list-item *ngFor="let product of products">
+    <a (selectionchange)="['/products','product', product.id, 'product']">
+      {{ product.id }} - {{ product.name }} - {{ product.brand }} - {{ product.price | currency }}
+    </a>
+  </mat-list-item>
+</mat-list>
+

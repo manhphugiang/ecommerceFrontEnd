@@ -1,0 +1,35 @@
+
+<mat-card *ngIf="product">
+  <mat-card-header>
+    <div mat-card-avatar class="product-image"></div>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle>{{ product.brand }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p><strong>Category:</strong> {{ product.category.name }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Price:</strong> {{ product.price | currency }}</p>
+    <p><strong>Inventory:</strong> {{ product.inventory }}</p>
+
+    <!-- Display images if available -->
+    <div *ngIf="product.images && product.images.length > 0">
+      <mat-list>
+        <mat-list-item *ngFor="let image of product.images">
+          <img mat-list-avatar [src]="image.url" alt="Product Image" />
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button color="primary">Add to Cart</button>
+    <button mat-button color="accent">Buy Now</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="!product">
+  <mat-card-content>
+    <p>Product not found.</p>
+  </mat-card-content>
+</mat-card>
