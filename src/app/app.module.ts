@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 
 
 // const approutes: Routes = [
@@ -25,7 +26,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     HeaderComponent,
     ItemListComponent,
     ProductDetailComponent,
-    AddProductComponent
+    AddProductComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,

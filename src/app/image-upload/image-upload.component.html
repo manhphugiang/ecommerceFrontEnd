@@ -1,0 +1,30 @@
+<div class="image-upload-container">
+  <h2>Upload Images for Product</h2>
+
+  <label for="product">Select Product:</label>
+  <select
+    id="product"
+    [(ngModel)]="selectedProductId"
+    class="dropdown"
+    required
+  >
+    <option *ngFor="let product of products" [value]="product.id">
+      {{ product.id }} - {{ product.name }} ({{ product.brand }})
+    </option>
+  </select>
+
+  <!-- File input for selecting images -->
+  <label for="file">Select Images:</label>
+  <input
+    type="file"
+    id="file"
+    (change)="onFileSelected($event)"
+    multiple
+    class="file-input"
+  />
+
+  <!-- Submit button -->
+  <button (click)="onUpload()" class="upload-button">
+    Upload Images
+  </button>
+</div>
