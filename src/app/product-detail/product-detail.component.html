@@ -12,7 +12,6 @@
     <p><strong>Price:</strong> {{ product.price | currency }}</p>
     <p><strong>Inventory:</strong> {{ product.inventory }}</p>
 
-    <!-- Display images if available -->
     <div *ngIf="product.images && product.images.length > 0">
       <mat-list>
         <mat-list-item *ngFor="let image of product.images">
